@@ -1,0 +1,31 @@
+
+
+<div ng-include="'tpl/include/header.html'"></div>
+<ion-content has-bouncing="true" class="has-header has-footer">
+    <div class="list list-inset">
+        <label  class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="搜索" ng-model="parent.search">
+        </label>
+        <p class="text-center" ng-show="shwo">无效，请重新输入...</p>
+    </div>
+    <div class="list list-inset">
+
+        <a class="item item-text-wrap item-thumbnail-left" href="#/kfldetail/{{itemp.did}}" ng-repeat="itemp in list track by $index">
+            <img ng-src="img/{{itemp.img_sm}}" >
+            <h2>{{itemp.name}}</h2>
+            <p>{{itemp.material}}</p>
+            <hr class="hr">
+            <p>¥{{itemp.price}}</p>
+        </a>
+    </div>
+    <ion-infinite-scroll
+            immediate-check="false"
+            ng-if="hasMore"
+            on-infinite="loadMore()">
+    </ion-infinite-scroll>
+
+
+    <button ng-if="hasMore" class="button button-block button-assertive" ng-click="btn()">加载更多</button>
+    <p ng-hide="hasMore" class="text-center">没有更多内容了...</p>
+</ion-content>

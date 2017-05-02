@@ -1,0 +1,14 @@
+<ion-content>
+    <form name="myForm" class="list list-inset text-center myForm">
+        <label class="item item-input">
+            <input type="text" placeholder="用户名" ng-model="data.username" required>
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="请输入密码..." ng-model="data.pwd" required>
+        </label>
+        <button  ng-disabled="myForm.$invalid" type="submit" ng-click="Login_btn()" class="button button-block button-assertive">点击登陆</button>
+        <button ng-click="register()"  class="button button-clear button-positive butt">
+            无账号请注册
+        </button>
+    </form>
+</ion-content>

@@ -1,0 +1,72 @@
+
+
+<ion-header-bar  align-title="center">
+        <h1 class="title">我的购物车</h1>
+</ion-header-bar>
+
+<ion-content class="has-header has-footer">
+    <div class="row text-center">
+        <div class="col">
+            菜品
+        </div>
+        <div class="col">
+            内容
+        </div>
+        <div class="col col-25">
+            编辑
+        </div>
+    </div>
+    <h1 class="text-center">{{cart_ts}}</h1>
+        <ion-list ng-repeat=" item in list">
+            <ion-item>
+                <div class="row">
+                    <div class="col" ui-sref="detail({id:item.did})">
+                        <img src="img/{{item.img_sm}}">
+                    </div>
+                    <div class="col">
+                        <h2>{{item.name}}</h2>
+                        <p>数量：x{{item.dishCount}}</p>
+                        <p>{{(item.price * item.dishCount) | currency:"¥"}}</p>
+                    </div>
+                    <div class="col col-10">
+                        <button ng-click="minus($index)">-</button>{{item.dishCount}}<button ng-click="add_btn($index)">+</button>
+                    </div>
+                </div>
+                <ion-option-button ng-click="delete_btn($index,item.ctid)" class="button-assertive">删除</ion-option-button>
+            </ion-item>
+        </ion-list>
+    <div class="list">
+
+        <div class="item item-button-right">
+            <h2>总计：{{sumAll()}}</h2>
+            <button ng-click="open()" class="button button-assertive">
+               立即下单
+            </button>
+        </div>
+
+    </div>
+
+</ion-content>
+<script id="cart_btn.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-content>
+            <ion-list>
+                <ion-item>
+                    <form name="myForm" class="list">
+                        <label class="item item-input">
+                            <input type="text" placeholder="请输入收货人" ng-model="order.user_name" required>
+                        </label>
+                        <label class="item item-input">
+                            <input type="number" placeholder="收货人手机号" ng-model="order.phone" required>
+                        </label>
+                        <label class="item item-input">
+                            <textarea placeholder="收货人地址..."  ng-model="order.addr" required></textarea>
+                        </label>
+                    </form>
+                    <button ng-click="Submit_btn()" ng-disabled="myForm.$invalid" class="button button-block button-assertive">提交信息</button>
+                    <button ng-click="close()" class="button button-block button-calm">返回</button>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-modal-view>
+</script>

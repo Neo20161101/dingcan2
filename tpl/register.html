@@ -1,0 +1,18 @@
+<ion-content>
+    <form name="myForm" class="list list-inset myForm">
+        <label class="item item-input">
+            <input type="text" placeholder="请输入用户名称" ng-model="data.username" required>
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="请输入密码" ng-model="data.pwd" required>
+        </label>
+        <label class="item item-input">
+            <input type="tel" placeholder="请输入手机号" ng-model="data.phone" required>
+        </label>
+        <div class="item">
+            <input type="text" placeholder="请输入验证码..." required>
+            <img class="vcode" src="data/vcode.php" alt="">
+        </div>
+        <button type="submit" ng-disabled="myForm.$invalid" ng-click="register_btn()" class="button button-block button-balanced">注册</button>
+    </form>
+</ion-content>

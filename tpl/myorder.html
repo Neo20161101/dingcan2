@@ -1,0 +1,58 @@
+
+<ion-header-bar align-title="center">
+    <h1 class="title">我的订单</h1>
+</ion-header-bar>
+
+
+<ion-content class="has-header has-footer">
+
+<div class="row text-center">
+    <div class="col col-20">编号</div>
+    <div class="col col-33">菜品</div>
+    <div class="col">下单时间</div>
+    <div class="col col-20">联系人</div>
+</div>
+<div class="row text-center" ng-repeat="item in list">
+    <div class="col col-20">{{$index+1}}</div>
+    <div class="col col-33"><a href="#/kfldetail/{{item.did}}"><img style="max-width:100%;" src="img/{{item.img_sm}}" alt=""></a></div>
+    <div class="col">{{item.order_time  | date:"yyyy-MM-dd HH:mm:ss"}}</div>
+    <div class="col col-20">{{item.user_name}}</div>
+</div>
+<h3>{{res}}</h3>
+    <div class="card">
+        <div class="item item-text-wrap item-button-right">
+            总计价格：{{totalPrice()  | currency:"￥"}}
+            <button class="button button-small button-outline button-assertive">
+                再来一单
+            </button>
+        </div>
+    </div>
+</ion-content>
+
+<script id="register.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-content>
+            <ion-list>
+                <ion-item>
+                    <div class="list list-inset">
+                        <div class="item">
+                            开发者：***
+                        </div>
+                        <div class="item">
+                            版本号：V1.0
+                        </div>
+                        <div class="item">
+                            Email:***@163.com
+                        </div>
+                        <button
+                                ng-click="close()"
+                                class="button button-balanced button-block">
+                            关闭
+                        </button>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-modal-view>
+</script>
+

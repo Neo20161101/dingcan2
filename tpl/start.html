@@ -1,0 +1,31 @@
+
+
+<ion-content style="z-index: 10;background-color: #FFDB13;">
+
+
+    <ion-slide-box>
+        <ion-slide>
+            <div class="box blue text-center">
+                <h2 class="welcome_title">
+                    <i class="ion-chevron-left"></i>
+                    <i class="ion-chevron-left"></i>
+                    <i class="ion-chevron-left"></i>
+                    向左滑动</h2>
+                    <img class="welcome_img" src="img/11891102_222057147263_2.jpg" alt="">
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box blue text-center">
+                <h2 class="welcome_title ion-chevron-left">继续向左滑动</h2>
+                <img class="welcome_img" src="img/11891102_222057147263_3.jpg" alt="">
+            </div>
+        </ion-slide>
+        <ion-slide on-slide-changed="slideHasChanged(index)">
+            <div class="box pink" ui-sref="main">
+                <h2 class="welcome_title ion-log-out">&nbsp;&nbsp;点击开始</h2>
+                <img class="welcome_img" src="img/11891102_222057147263_3.jpg" alt="">
+            </div>
+        </ion-slide>
+    </ion-slide-box>
+</ion-content>
+

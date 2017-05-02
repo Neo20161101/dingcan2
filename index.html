@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eleme">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/ionic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/ionic.bundle.min.js"></script>
+    <script src="js/angular.js"></script>
+    <title>饱了么</title>
+</head>
+
+<body ng-controller="parentCtrl">
+    <div ui-view>
+
+    </div>
+    <ion-tabs class="tabs-icon-top tabs-striped tabs-color-assertive">
+        <ion-tab icon="ion-home" on-select="jump('main')" title="主页"></ion-tab>
+        <ion-tab icon="ion-person" on-select="jump('myorder')" title="订单中心"></ion-tab>
+        <ion-tab icon="ion-bag" on-select="jump('cart')" title="购物车" badge="data.totalNumInCart" badge-style="badge-assertive"></ion-tab>
+        <ion-tab icon="ion-ios-gear" on-select="jump('setting')" title="设置"></ion-tab>
+    </ion-tabs>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+.welcome_img{
+    max-width: 100%;
+}
+.welcome_title{
+    position: absolute;
+    bottom:15%;
+    left:25%;
+    color: #FF6E01;
+}
+.tabs-top>.tabs, .tabs.tabs-top{
+    top:auto;
+}
+.slider-pager{
+    bottom:80px;
+}
+.slider-pager .slider-pager-page{
+    color: #f00;
+}
+.myForm{
+    margin-top:40%;
+}
+.item .vcode{
+    position: absolute;
+    top:18px;
+    right:18px;
+}

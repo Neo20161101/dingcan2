@@ -1,0 +1,71 @@
+
+<div ng-include="'tpl/include/header.html'"></div>
+
+<ion-content class="has-header has-footer">
+
+  <div class="list list-inset">
+    <div ng-click="useropen()" class="item">
+      账号
+    </div>
+    <div
+      ng-click="open()"
+      class="item">关于</div>
+    <div
+      ng-click="closeout()"
+      class="item">退出登录</div>
+  </div>
+
+</ion-content>
+<script id="useropen.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <div class="list list-inset">
+            <div class="item">
+              账户名称：{{list.uname}}
+            </div>
+            <div class="item">
+              手机号：{{list.phone  | limitTo :3}}***{{list.phone  | limitTo :-4}}
+            </div>
+            <button
+                    ng-click="close2()"
+                    class="button button-balanced button-block">
+              关闭
+            </button>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<script id="About.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <div class="list list-inset">
+            <div class="item">
+              开发者：***
+            </div>
+            <div class="item">
+              版本号：V0.9
+            </div>
+            <div class="item">
+              Email:***@live.com
+            </div>
+            <button
+                    ng-click="close()"
+                    class="button button-balanced button-block">
+              关闭
+            </button>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+
